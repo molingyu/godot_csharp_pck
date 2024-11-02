@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlm2cb8q7ajyp"]
+
+[ext_resource type="Script" path="res://Main.cs" id="1_ww2w1"]
+
+[node name="Node2D" type="Node2D" node_paths=PackedStringArray("_fileDialog", "_loadButton")]
+script = ExtResource("1_ww2w1")
+_fileDialog = NodePath("CenterContainer/FileDialog")
+_loadButton = NodePath("CenterContainer/Button")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(800, 600)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="CenterContainer"]
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "load pck"
+
+[node name="FileDialog" type="FileDialog" parent="CenterContainer"]
+title = "Open a File"
+initial_position = 2
+size = Vector2i(600, 320)
+unresizable = true
+always_on_top = true
+popup_window = true
+ok_button_text = "Open"
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.pck")
